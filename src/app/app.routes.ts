@@ -5,8 +5,8 @@ import { ContactDetailsPage } from './pages/contact-details-page/contact-details
 import { LoggedLayout } from './layouts/logged-layout/logged-layout';
 import { GroupsPage } from './pages/groups/groups';
 import { RegisterPage } from './pages/register-page/register-page';
-import { onlyPublicUserGuard } from './guards/only-public-user-guard';
 import { onlyLoggedUserGuard } from './guards/only-logged-user-guard';
+import { onlyPublicUserGuard } from './guards/only-public-user-guard';
 import { NewEditContact } from './pages/new-edit-contact/new-edit-contact';
 
 export const routes: Routes = [

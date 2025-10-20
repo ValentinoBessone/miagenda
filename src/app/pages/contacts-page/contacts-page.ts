@@ -14,6 +14,10 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './contacts-page.scss'
 })
 export class ContactsPage implements OnInit {
+createContact(arg0: any) {
+throw new Error('Method not implemented.');
+}
+contactos: any;
   ngOnInit(): void {
     this.contactsService.getContacts();
   }
