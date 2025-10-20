@@ -1,0 +1,9 @@
+<p>loggedlayout works!</p>
+<div>
+    <nav>
+        <a routerLink="/">Contactos</a>
+        <a routerLink="/groups">Grupos</a>
+        <button (click)="authService.loggedlayout()">Log out</button>
+    </nav>
+</div>
+<router-outlet/>
