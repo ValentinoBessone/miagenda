@@ -1,21 +1,55 @@
-<p>contacts-page works!</p>
-<div>
-    <span>Nombre</span>
-    <span>telefono</span>
-    <span>email</span>
-    <span>grupos</span>
-    <span>acciones</span>
+<!---->
+<div class="contacts-page">
+  <header class="contacts-header">
+    <div class="header-row">
+      <span class="col name">Nombre</span>
+      <span class="col phone">Teléfono</span>
+      <span class="col email">Email</span>
+      <span class="col groups">Grupos</span>
+      <span class="col actions">Acciones</span>
+    </div>
+    <div class="header-actions">
+      <input type="search" placeholder="Buscar contacto..." aria-label="Buscar contacto" />
+    </div>
+  </header>
+
+  <section class="contacts-list">
+    <ul class="list">
+      <app-contact-list-item
+        *ngFor="let item of contactos; let i = index; trackBy: trackById"
+        [contact]="item">
+      </app-contact-list-item>
+    </ul>
+
+    <div class="empty" [hidden]="contactos?.length > 0">
+      No hay contactos. Crea uno nuevo abajo.
+    </div>
+  </section>
+
+  <section class="contacts-form">
+    <h3>Nuevo contacto</h3>
+    <form (ngSubmit)="createContact(newContactForm.value)" #newContactForm="ngForm" novalidate>
+      <div class="form-row">
+        <label for="first-name">Nombre</label>
+        <input id="first-name" name="firstName" type="text" ngModel required />
+      </div>
+
+      <div class="form-row">
+        <label for="phone">Teléfono</label>
+        <input id="phone" name="phone" type="tel" ngModel />
+      </div>
+
+      <div class="form-row">
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" ngModel />
+      </div>
+
+      <div class="form-actions">
+        <button type="submit" [disabled]="newContactForm.invalid">Crear</button>
+        <button type="button" (click)="newContactForm.reset()">Limpiar</button>
+      </div>
+    </form>
+  </section>
 </div>
 
-@for (item of contactos; track $index) {
-    <app-contact-list-item [contact]="item"></app-contact-list-item>
 
-
-}
-<form (ngsubmit)="createContact(newContactForm.value)" #newContactForm="ngForm">
-    <div>
-        <label for="">Nombre</label>
-        <input id="first-name" type="text" ngModel requiered="true"> 
-    </div>
-
-</form>

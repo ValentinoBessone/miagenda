@@ -1,9 +1,24 @@
-<p>loggedlayout works!</p>
-<div>
-    <nav>
-        <a routerLink="/">Contactos</a>
-        <a routerLink="/groups">Grupos</a>
-        <button (click)="openLogoutModal()">Log out</button>
+<header class="app-header">
+  <div class="container header-inner">
+    <a class="brand" [routerLink]="['/']" aria-label="Ir a inicio">
+
+      <span class="brand-name">MiAgenda</span>
+    </a>
+
+    <nav class="main-nav" aria-label="Navegación principal" role="navigation">
+      <a class="nav-link" [routerLink]="['/']" routerLinkActive="active">Contactos</a>
+      <a class="nav-link" [routerLink]="['/groups']" routerLinkActive="active">Grupos</a>
+      <button class="btn btn-logout" (click)="openLogoutModal()" aria-label="Cerrar sesión">Cerrar sesión</button>
     </nav>
-</div>
-<router-outlet/>
+  </div>
+</header>
+
+<main class="app-main">
+  <router-outlet></router-outlet>
+</main>
+
+<footer class="app-footer">
+  <div class="container">
+    <small>© MiAgenda</small>
+  </div>
+</footer>
