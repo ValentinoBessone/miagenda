@@ -1,25 +1,4 @@
-.seccionlogin{
-    min-height: 100vh;
-    text-align: center;
-    background-color: lightblue;
+#container {
     
-}
-
-#box{
-    display: flex;
-    flex-direction: column;
-    min-height: 80vh;
-    margin-top: 40px;
-    margin-left: 50px;
-    min-width: 60vh;
-    background-color: #3380a6;
-    padding: 40px;
-    border-radius: 10px;
-    box-shadow: 0px 4px 15px rgba(0,0,0,0.3);
-    text-align: center;
-    width: 300px;
-}
-#volver{
-    margin-top: 20px;
-    font-size: 12px;
+    background-color: grey;
 }
