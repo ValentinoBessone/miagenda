@@ -7,21 +7,22 @@ import { Spinner } from '../../components/spinner/spinner';
 
 @Component({
   selector: 'app-new-edit-contact',
-  imports: [FormsModule,Spinner],
+  imports: [FormsModule, Spinner],
   templateUrl: './new-edit-contact.html',
   styleUrl: './new-edit-contact.scss'
 })
 export class NewEditContact implements OnInit {
-   contactsService = inject(ContactsService);
-   router = inject(Router)
-    errorEnBack = false;
-   idContacto = input<string>();
-    contactoOriginal:Contact|undefined = undefined;
-   form = viewChild<NgForm>('newContactForm');
-   isLoading = false;
-  
+  contactsService = inject(ContactsService);
+  router = inject(Router)
+  errorEnBack = false;
+  idContacto = input<string>();
+  contacto: Contact | undefined;
+  contactoOriginal: Contact | undefined = undefined;
+  form = viewChild<NgForm>('newContactForm');
+  isLoading = false;
+
   async ngOnInit() {
-    if(this.idContacto()){
+    if (this.idContacto()) {
       this.contactoOriginal = await this.contactsService.getContactById(this.idContacto()!);
       // Cambio los valores del formulario
       this.form()?.setValue({
@@ -38,9 +39,9 @@ export class NewEditContact implements OnInit {
   }
 
   /** Revisa si estamos editando o creando un contacto y ejecuta la función correspondiente del servicio de contactos */
-  async handleFormSubmission(form:NgForm){
+  async handleFormSubmission(form: NgForm) {
     this.errorEnBack = false;
-    const nuevoContacto: NewContact ={
+    const nuevoContacto: NewContact = {
       firstName: form.value.firstName,
       lastName: form.value.lastName,
       address: form.value.address,
@@ -53,17 +54,24 @@ export class NewEditContact implements OnInit {
     let res;
     // const res = await this.contactsService.createContact(nuevoContacto);
     this.isLoading = true;
-    if(this.idContacto()){
-      res = await this.contactsService.editContact({...nuevoContacto,id:this.idContacto()!})
+    if (this.idContacto()) {
+      res = await this.contactsService.editContact({ ...nuevoContacto, id: this.idContacto()! })
     } else {
       res = await this.contactsService.createContact(nuevoContacto);
     }
     this.isLoading = false;
-    if(!res) {
+    if (!res) {
       this.errorEnBack = true;
       return
     };
-    this.router.navigate(["/contacts",res.id]);
+    this.router.navigate(["", res.id]);
+  }
+
+  async toggleFavorite() {
+    if (this.contacto) {
+      const res = await this.contactsService.setFavourite(this.contacto.id);
+      if (res) this.contacto.isFavorite = !this.contacto.isFavorite;
+    }
   }
 
 }

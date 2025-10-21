@@ -1,0 +1,98 @@
+/* ...existing code... */
+.contact-item {
+  display: block;
+  border-bottom: 1px solid #eef2f7;
+  background: #fff;
+  transition: background 150ms ease, transform 150ms ease;
+  padding: 10px 12px;
+  position: relative;
+}
+
+.contact-item:hover {
+  background: linear-gradient(90deg, rgba(13,110,253,0.03), rgba(0,0,0,0.01));
+  transform: translateY(-2px);
+}
+
+.contact-row {
+  display: grid;
+  grid-template-columns: 2fr 1fr 2fr 1fr 1fr;
+  gap: 12px;
+  align-items: center;
+}
+
+.col {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 0.95rem;
+  color: #1f2937;
+}
+
+.col.name {
+  font-weight: 600;
+  color: #0f172a;
+  text-decoration: none;
+}
+
+.col.name a,
+.col.name { color: inherit; text-decoration: none; }
+
+.col.actions {
+  display: flex;
+  gap: 8px;
+  justify-self: end;
+  align-items: center;
+}
+
+.btn {
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  cursor: pointer;
+  border: 1px solid transparent;
+}
+
+.btn-edit {
+  background: #f8fafc;
+  color: #0f172a;
+  border-color: #e6eefb;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.btn-delete {
+  background: #fff5f5;
+  color: #b91c1c;
+  border-color: #ffd6d6;
+}
+
+.fav {
+  position: absolute;
+  right: 10px;
+  top: 8px;
+  font-size: 1.05rem;
+  color: #f59e0b;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  pointer-events: none;
+}
+
+.contact-item.favourite {
+  box-shadow: 0 6px 20px rgba(20, 184, 166, 0.06);
+  border-left: 4px solid #06b6d4;
+}
+
+/* small screens */
+@media (max-width: 720px) {
+  .contact-row {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+
+  .col.actions { justify-self: start; }
+  .fav { right: 12px; top: 6px; }
+}
+/* ...existing code... */

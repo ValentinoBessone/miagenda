@@ -1,51 +1,3 @@
-/*
-import { Injectable, inject } from '@angular/core';
-import { Contact } from '../interfaces/contact';
-import { AuthService } from './auth-service';
-
-@Injectable({
-  providedIn: 'root'
-})
-export class ContactsService {
-  setFavourite: any;
-  getContacts() {
-    throw new Error('Method not implemented.');
-  }
-  aleatorio = Math.random();
-  contacts: Contact[] = [
-    {
-      firstName: 'valentino',
-      lastName: 'bessone',
-      number: '3471342887',
-      email: 'vbessone11@gmail.com',
-      address: 'storni 729',
-      id: '10',
-      image: 'https://avatars.githubusercontent.com/u/52204228?v=4',
-      company: 'UNIVERSIDAD',
-      isFavorite: false
-    }
-  ];
-
-  private authService = inject(AuthService);
-
-  async deleteContact(id: string | number) {
-    const res = await fetch(`https://agenda-api.somee.com/api/contacts/${id}`, {
-      method: 'DELETE',
-      headers: {
-        Authorization: 'Bearer ' + this.authService.token
-      }
-    });
-
-    if (res.ok) {
-      this.contacts = this.contacts.filter(contact => contact.id !== id);
-      return true;
-    } else {
-      return false;
-    }
-  }
-}
-  */
-
 import { inject, Injectable } from '@angular/core';
 import { Contact, NewContact } from '../interfaces/contact';
 import { AuthService } from './auth-service';
@@ -64,8 +16,8 @@ export class ContactsService {
   async getContacts() {
     const res = await fetch(this.URL_BASE,
       {
-        headers:{
-          Authorization: "Bearer "+this.authService.token,
+        headers: {
+          Authorization: "Bearer " + this.authService.token,
         }
       }
     )
@@ -75,49 +27,49 @@ export class ContactsService {
 
   /** Devuelve un contato en particular segun su ID */
   async getContactById(id: string | number) {
-    const res = await fetch(this.URL_BASE+"/"+id, 
+    const res = await fetch(this.URL_BASE + "/" + id,
       {
         headers: {
-          Authorization: "Bearer "+this.authService.token,
+          Authorization: "Bearer " + this.authService.token,
         },
       });
-    if(!res.ok) return;
-    const resContact:Contact = await res.json();
+    if (!res.ok) return;
+    const resContact: Contact = await res.json();
     return resContact;
   }
 
   /** Crea un contacto */
-  async createContact(nuevoContacto:NewContact) {
-    const res = await fetch(this.URL_BASE, 
+  async createContact(nuevoContacto: NewContact) {
+    const res = await fetch(this.URL_BASE,
       {
-        method:"POST",
+        method: "POST",
         headers: {
           "Content-Type": "application/json",
-          Authorization: "Bearer "+this.authService.token,
+          Authorization: "Bearer " + this.authService.token,
         },
         body: JSON.stringify(nuevoContacto)
       });
-    if(!res.ok) return;
-    const resContact:Contact = await res.json();
+    if (!res.ok) return;
+    const resContact: Contact = await res.json();
     this.contacts.push(resContact);
     return resContact;
   }
 
   /** Edita un contacto */
-  async editContact(contactoEditado:Contact) {
-    const res = await fetch(this.URL_BASE+"/"+contactoEditado.id, 
+  async editContact(contactoEditado: Contact) {
+    const res = await fetch(this.URL_BASE + "/" + contactoEditado.id,
       {
-        method:"PUT",
+        method: "PUT",
         headers: {
           "Content-Type": "application/json",
-          Authorization: "Bearer "+this.authService.token,
+          Authorization: "Bearer " + this.authService.token,
         },
         body: JSON.stringify(contactoEditado)
       });
-    if(!res.ok) return;
+    if (!res.ok) return;
     /** Edita la lista actual de contactos reemplazando sólamente el que editamos */
     this.contacts = this.contacts.map(contact => {
-      if(contact.id === contactoEditado.id) {
+      if (contact.id === contactoEditado.id) {
         return contactoEditado;
       };
       return contact;
@@ -126,33 +78,33 @@ export class ContactsService {
   }
 
   /** Borra un contacto */
-  async deleteContact(id:string | number) {
-    const res = await fetch(this.URL_BASE+"/"+id, 
+  async deleteContact(id: string | number) {
+    const res = await fetch(this.URL_BASE + "/" + id,
       {
         method: "DELETE",
         headers: {
-          Authorization: "Bearer "+this.authService.token,
+          Authorization: "Bearer " + this.authService.token,
         },
       });
-    if(!res.ok) return;
+    if (!res.ok) return;
     this.contacts = this.contacts.filter(contact => contact.id !== id);
     return true;
   }
 
   /** Marca/desmarca un contacto como favorito */
-  async setFavourite(id:string | number ) {
-    const res = await fetch(this.URL_BASE+"/"+id+"/favorite", 
+  async setFavourite(id: string | number) {
+    const res = await fetch(this.URL_BASE + "/" + id + "/favorite",
       {
         method: "POST",
         headers: {
-          Authorization: "Bearer "+this.authService.token,
+          Authorization: "Bearer " + this.authService.token,
         },
       });
-    if(!res.ok) return;
+    if (!res.ok) return;
     /** Edita la lista actual de contactos reemplazando sólamente el favorito del que editamos */
     this.contacts = this.contacts.map(contact => {
-      if(contact.id === id) {
-        return {...contact, isFavorite: !contact.isFavorite};
+      if (contact.id === id) {
+        return { ...contact, isFavorite: !contact.isFavorite };
       };
       return contact;
     });

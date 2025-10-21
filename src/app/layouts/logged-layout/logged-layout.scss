@@ -1,0 +1,143 @@
+
+  /*ESTRUCTURA PRINCIPAL DEL LAYOUT (Barra Lateral + Contenido)*/
+
+:host {
+    display: flex;  
+    min-height: 100vh; 
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa; 
+}
+
+/* 1. BARRA LATERAL (Sidebar - app-header) */
+.app-header {
+    width: 250px;  
+    background-color: #ffffff; 
+    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1); 
+    padding: 20px 0;
+    flex-shrink: 0;  
+    display: flex;
+    flex-direction: column; 
+    position: sticky; /* Opcional: mantiene la barra visible si la página es scrollable */
+    top: 0;
+    height: 100vh;
+}
+
+/* Contenedor de la barra lateral (container-header-inner) */
+.container-header-inner {
+    width: 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
+    /* Alinea el logo y la navegación verticalmente */
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Permite que este contenedor use el espacio restante */
+}
+
+/* Logo/Marca (brand y brand-name) */
+.brand {
+    text-decoration: none;
+    margin-bottom: 30px;
+    align-self: flex-start; /* Alinea el logo a la izquierda dentro de la barra */
+}
+
+.brand-name {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #007bff; /* Azul de tu estilo */
+}
+
+/* NAVEGACIÓN (main-nav) */
+.main-nav {
+    display: flex;
+    flex-direction: column; /* Apila los enlaces verticalmente */
+    width: 100%;
+}
+
+/* Enlaces de navegación (nav-link) */
+.nav-link {
+    color: #333;
+    text-decoration: none;
+    padding: 12px 15px; /* Más padding para que sean más grandes y fáciles de pulsar */
+    margin: 2px 0;
+    transition: background-color 0.2s, color 0.2s;
+    font-weight: 500;
+    text-align: left;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.nav-link:hover {
+    background-color: #e9ecef; /* Gris claro al pasar el ratón */
+    color: #0056b3;
+}
+
+/* Enlace activo (routerLinkActive="active") */
+.nav-link.active {
+    background-color: #007bff; /* Fondo azul para el elemento activo */
+    color: white;
+    font-weight: 600;
+    border-left: 5px solid #0056b3; /* Indicador visual de activo */
+    padding-left: 10px; /* Ajusta el padding para compensar el borde */
+}
+
+.nav-link.active:hover {
+    background-color: #0056b3;
+}
+
+/* Botón de Cerrar Sesión (btn-logout) */
+.btn-logout {
+    /* Mantenemos el estilo de botón gris secundario */
+    background-color: #6c757d;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-top: auto; /* ***IMPORTANTE: Empuja el botón al fondo de la barra lateral*** */
+    margin-bottom: 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: background-color 0.2s;
+    width: calc(100% - 40px); /* Ocupa el ancho interno con padding */
+    align-self: center;
+}
+
+.btn-logout:hover {
+    background-color: #5a6268;
+}
+
+/*
+  2. CONTENIDO PRINCIPAL (app-main)*/
+
+.app-main {
+    flex-grow: 1; /* Ocupa todo el espacio horizontal restante */
+    padding: 30px;
+    overflow-y: auto; /* Permite desplazamiento si el contenido es largo */
+    /* Usamos flexbox para gestionar el router-outlet y el footer */
+    display: flex;
+    flex-direction: column;
+}
+
+/*
+  3. PIE DE PÁGINA (FOOTER - app-footer)
+  Lo colocamos al final del contenido principal (no de la sidebar)*/
+
+.app-footer {
+    background-color: transparent;
+    color: #6c757d;
+    padding: 20px 0 0 0;
+    margin-top: auto; /* ***IMPORTANTE: Empuja el footer al final del contenido principal*** */
+    text-align: center;
+    border-top: 1px solid #e9ecef;
+}
+
+.app-footer .container {
+    /* El contenedor en el footer solo asegura que el texto esté centrado */
+    text-align: center;
+}
+
+.app-footer small {
+    font-size: 0.9rem;
+    color: #888;
+}
+

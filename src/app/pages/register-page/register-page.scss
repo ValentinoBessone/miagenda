@@ -8,7 +8,8 @@
   font-family: "Segoe UI", Roboto, sans-serif;
   padding: 1rem;
   box-sizing: border-box;
-}
+} 
+ 
 
 /* Tarjeta del formulario 
 .card {
@@ -22,7 +23,7 @@
 } */
 
 .card {
-    height: 100vh;
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -31,19 +32,13 @@
   color: #f0f0f0;
 }
 
-/* Título 
-.card h1 {
-  font-size: 1.6rem;
+ #registerbutton {
+  font-size: 2rem;
+  font-weight: 700;
   text-align: center;
-  margin-bottom: 1.8rem;
   color: #333;
-} */
-#registerbutton {
-  font-size: 1.6rem;
-  text-align: center;
-  margin-bottom: 1.8rem;
-  color: #333;
-}
+  margin-bottom: 2rem;
+ }
 
 /* Etiquetas */
 label {

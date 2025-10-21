@@ -1,7 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { Router, RouterModule } from '@angular/router';
-import { UserServices } from '../../services/user-services';
+import { UsersServices } from '../../services/user-services';
 import { Spinner } from '../../components/spinner/spinner';
 
 
@@ -12,7 +12,7 @@ import { Spinner } from '../../components/spinner/spinner';
   styleUrl: './register-page.scss'
 })
 export class RegisterPage {
-  userService: UserServices = inject(UserServices);
+  userService: UsersServices = inject(UsersServices);
   errorRegister= false;
   isLoading = false;
   router: Router = inject(Router);

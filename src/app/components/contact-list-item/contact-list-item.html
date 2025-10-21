@@ -1,17 +1,28 @@
-<p>contact-list-item works!</p>
-<li> [class.favourite]="contact().isFavorite === true">
-    <span>{{contact().firstName}} {{contact().lastName}}</span>
-    <span>{{contact().number}}</span>
-    <span>{{contact().email}}</span>
-    <span>-</span>
-    <span>
-        <button (click)="openDeleteModal()">Borrar</button>
-        <a [routerLink]="['/contacts',contact().id,'edit']">Editar</a>
-    </span>
-    <span>
-        @if (contact().isFavorite === true) {
+<!-- ...existing code... -->
 
-        }
-    </span>
+        <a class="col name" [routerLink]="['/contacts', contact().id]" title="Ver {{ contact().firstName }}">
+            {{ contact().firstName }} {{ contact().lastName }}
+        </a>
 
-</li>
+        <div class="col phone">{{ contact().number || contact().number || '—' }}</div>
+        <div class="col email">{{ contact().email || '—' }}</div>
+        <div class="col groups">{{ '—' }}</div>
+
+        <div class="col actions" role="group" aria-label="Acciones">
+            <button class="btn btn-delete"
+                (click)="openDeleteModal(); $event.stopPropagation(); $event.preventDefault()"
+                aria-label="Borrar contacto">
+                Borrar
+            </button>
+
+            <a class="btn btn-edit" [routerLink]="['/contacts', contact().id, 'edit']" aria-label="Editar contacto">
+                Editar
+            </a>
+        </div>
+    
+    <div class="fav" [hidden]="!contact().isFavorite">
+        <span aria-hidden="true">★</span>
+        <span class="sr-only">Favorito</span>
+    </div>
+
+<!-- ...existing code... -->
