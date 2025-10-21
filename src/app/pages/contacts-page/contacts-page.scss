@@ -1,0 +1,138 @@
+/* Contenedor principal */
+.contacts-page {
+  max-width: 500px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+
+/* Header de la lista de contactos */
+.contacts-header {
+  margin-bottom: 1.5rem;
+}
+
+.header-row {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.header-row .col {
+  flex: 1;
+  text-align: left;
+}
+
+.header-row .actions {
+  text-align: center;
+}
+
+.header-actions {
+  margin-top: 0.5rem;
+}
+
+.header-actions input[type="search"] {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.header-actions input[type="search"]:focus {
+  border-color: #007bff;
+}
+
+/* Lista de contactos */
+.contacts-list .list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.5rem 0;
+}
+
+.contacts-list .empty {
+  text-align: center;
+  padding: 1rem;
+  color: #777;
+  font-style: italic;
+}
+
+/* Formulario de nuevo contacto */
+.contacts-form h3 {
+  margin-bottom: 1rem;
+  text-align: center;
+  font-size: 1.2rem;
+  color: #007bff;
+}
+
+.contacts-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contacts-form .form-row {
+  display: flex;
+  flex-direction: column;
+}
+
+.contacts-form label {
+  margin-bottom: 0.3rem;
+  font-weight: bold;
+  font-size: 0.95rem;
+}
+
+.contacts-form input {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.contacts-form input:focus {
+  border-color: #007bff;
+}
+
+/* Botones */
+.contacts-form .form-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.contacts-form button {
+  flex: 1;
+  padding: 0.5rem 0.75rem;
+  border: none;
+  border-radius: 6px;
+  background-color: #007bff;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.contacts-form button[type="button"] {
+  background-color: #6c757d;
+}
+
+.contacts-form button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.contacts-form button:hover:not(:disabled) {
+  background-color: #0056b3;
+}
+
+.contacts-form button[type="button"]:hover {
+  background-color: #5a6268;
+}

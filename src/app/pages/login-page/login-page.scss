@@ -1,4 +1,197 @@
+
+/* Contenedor principal */
 #container {
-    
-    background-color: grey;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f6f8fa;
+  font-family: "Segoe UI", Roboto, sans-serif;
+  padding: 1rem;
+  box-sizing: border-box;
 }
+
+/* Tarjeta del formulario 
+.card {
+
+  background-color: #ffffff;
+  padding: 2rem 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  width: 100%;
+  max-width: 360px;
+  box-sizing: border-box;
+} */
+ .card {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column; 
+  background-color: #2c2a3e;
+  font-family: 'Nunito Sans', sans-serif;
+  color: #f0f0f0;
+}
+
+/* Título 
+.card h1 {
+  font-size: 1.6rem;
+  text-align: center;
+  margin-bottom: 1.8rem;
+  color: #333; 
+} */
+
+#firstbutton {
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  color: #333;
+  margin-bottom: 2rem;
+}
+
+
+
+
+/* Etiquetas */
+label {
+  display: block;
+  margin-bottom: 0.3rem;
+  color: #555;
+  font-weight: 500;
+}
+
+/* Inputs */
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 0.6rem 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  margin-bottom: 0.8rem;
+  box-sizing: border-box;
+}
+
+input[type="email"]:focus,
+input[type="password"]:focus {
+  outline: none;
+  border-color: #1976d2;
+}
+
+/* Mensajes de error */
+.error {
+  color: #d93025;
+  font-size: 0.85rem;
+  margin-top: -0.4rem;
+  margin-bottom: 0.8rem;
+}
+
+/* Botón */
+#buttoniniciarsesion {
+  width: 100%;
+  background-color: #1976d2;
+  color: white;
+  border: none;
+  padding: 0.7rem;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+#buttoniniciarsesion:hover:not([disabled]) {
+  background-color: #1565c0;
+}
+
+#buttoniniciarsesion[disabled] {
+  background-color: #a0a0a0;
+  cursor: not-allowed;
+}
+
+/* Spinner y mensaje de error general */
+app-spinner {
+  display: block;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+p.error {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+/* Link de registro */
+a {
+  color: #1976d2;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Texto inferior */
+p {
+  text-align: center;
+  margin-top: 1.2rem;
+  color: #444;
+}
+
+/* ---------- Responsive ---------- */
+
+/* Tablet */
+@media (max-width: 768px) {
+  .card {
+    padding: 1.8rem 2rem;
+    max-width: 320px;
+  }
+
+  .card h1 {
+    font-size: 1.4rem;
+  }
+
+  input[type="email"],
+  input[type="password"] {
+    font-size: 0.9rem;
+  }
+
+  #buttoniniciarsesion {
+    font-size: 0.95rem;
+  }
+}
+
+/* Celular */
+@media (max-width: 480px) {
+  #container {
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+  }
+
+  .card {
+    padding: 1.5rem;
+    max-width: 100%;
+    box-shadow: none;
+    border-radius: 8px;
+  }
+
+  .card h1 {
+    font-size: 1.3rem;
+    margin-bottom: 1.2rem;
+  }
+
+  input[type="email"],
+  input[type="password"] {
+    padding: 0.55rem 0.7rem;
+    font-size: 0.9rem;
+  }
+
+  #buttoniniciarsesion {
+    padding: 0.65rem;
+  }
+
+  p {
+    font-size: 0.9rem;
+  }
+} 
+

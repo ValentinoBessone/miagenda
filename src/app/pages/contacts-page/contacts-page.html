@@ -1,5 +1,5 @@
-<!---->
-<div class="contacts-page">
+
+<!--<div class="contacts-page">
   <header class="contacts-header">
     <div class="header-row">
       <span class="col name">Nombre</span>
@@ -50,6 +50,22 @@
       </div>
     </form>
   </section>
-</div>
+</div>-->
 
+<!-- <a routerLink="login">Ir a login</a> -->
+ <div>
+  <span>Nombre</span>
+  <span>Telefono</span>
+  <span>Email</span>
+  <span>Grupos</span>
+  <span>Acciones</span>
+ </div>
+ <ul>
+  @for (contactoIndividual of contactsService.contacts; track $index) {
+    <a [routerLink]="['/contacts',contactoIndividual.id]">
+      <app-contact-list-item [contact]="contactoIndividual"></app-contact-list-item>
+    </a>
+  }
+ </ul>
+ <a routerLink="/contacts/new">+</a>
 
