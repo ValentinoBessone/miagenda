@@ -1,4 +1,4 @@
-/* ...existing code... */
+
 .contact-item {
   display: block;
   border-bottom: 1px solid #eef2f7;
@@ -85,7 +85,7 @@
   border-left: 4px solid #06b6d4;
 }
 
-/* small screens */
+
 @media (max-width: 720px) {
   .contact-row {
     grid-template-columns: 1fr;
@@ -95,4 +95,3 @@
   .col.actions { justify-self: start; }
   .fav { right: 12px; top: 6px; }
 }
-/* ...existing code... */

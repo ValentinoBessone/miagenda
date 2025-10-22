@@ -1,5 +1,5 @@
 
-/* Contenedor principal */
+
 #container {
   display: flex;
   justify-content: center;
@@ -11,17 +11,6 @@
   box-sizing: border-box;
 }
 
-/* Tarjeta del formulario 
-.card {
-
-  background-color: #ffffff;
-  padding: 2rem 2.5rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  width: 100%;
-  max-width: 360px;
-  box-sizing: border-box;
-} */
  .card {
   height: 100vh;
   display: flex;
@@ -33,13 +22,7 @@
   color: #f0f0f0;
 }
 
-/* Título 
-.card h1 {
-  font-size: 1.6rem;
-  text-align: center;
-  margin-bottom: 1.8rem;
-  color: #333; 
-} */
+
 
 #firstbutton {
   font-size: 2rem;
@@ -52,7 +35,7 @@
 
 
 
-/* Etiquetas */
+
 label {
   display: block;
   margin-bottom: 0.3rem;
@@ -60,7 +43,7 @@ label {
   font-weight: 500;
 }
 
-/* Inputs */
+
 input[type="email"],
 input[type="password"] {
   width: 100%;
@@ -86,7 +69,7 @@ input[type="password"]:focus {
   margin-bottom: 0.8rem;
 }
 
-/* Botón */
+
 #buttoniniciarsesion {
   width: 100%;
   background-color: #1976d2;
@@ -119,7 +102,7 @@ p.error {
   margin-top: 1rem;
 }
 
-/* Link de registro */
+
 a {
   color: #1976d2;
   text-decoration: none;
@@ -130,7 +113,7 @@ a:hover {
   text-decoration: underline;
 }
 
-/* Texto inferior */
+
 p {
   text-align: center;
   margin-top: 1.2rem;
@@ -139,7 +122,7 @@ p {
 
 /* ---------- Responsive ---------- */
 
-/* Tablet */
+
 @media (max-width: 768px) {
   .card {
     padding: 1.8rem 2rem;
@@ -160,7 +143,7 @@ p {
   }
 }
 
-/* Celular */
+
 @media (max-width: 480px) {
   #container {
     justify-content: center;

@@ -1,4 +1,4 @@
-/* Contenedor principal */
+
 #container {
   display: flex;
   justify-content: center;
@@ -11,16 +11,7 @@
 } 
  
 
-/* Tarjeta del formulario 
-.card {
-  background-color: #ffffff;
-  padding: 2rem 2.5rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  width: 100%;
-  max-width: 400px;
-  box-sizing: border-box;
-} */
+
 
 .card {
   height: 100vh;
@@ -40,7 +31,7 @@
   margin-bottom: 2rem;
  }
 
-/* Etiquetas */
+
 label {
   display: block;
   margin-bottom: 0.3rem;
@@ -48,7 +39,7 @@ label {
   font-weight: 500;
 }
 
-/* Inputs */
+
 input[type="text"],
 input[type="email"],
 input[type="password"] {
@@ -74,7 +65,7 @@ input:focus {
   margin-bottom: 0.8rem;
 }
 
-/* Botón */
+
 button {
   width: 100%;
   background-color: #1976d2;
@@ -95,7 +86,7 @@ button[disabled] {
   cursor: not-allowed;
 }
 
-/* Spinner y mensaje de error general */
+
 app-spinner {
   display: block;
   text-align: center;
@@ -107,7 +98,7 @@ p.error {
   margin-top: 1rem;
 }
 
-/* Link de login */
+
 a {
   color: #1976d2;
   text-decoration: none;
@@ -118,7 +109,7 @@ a:hover {
   text-decoration: underline;
 }
 
-/* Texto inferior */
+
 p {
   text-align: center;
   margin-top: 1.2rem;
@@ -127,7 +118,7 @@ p {
 
 /* ---------- Responsive ---------- */
 
-/* Tablet */
+
 @media (max-width: 768px) {
   .card {
     padding: 1.8rem 2rem;
@@ -147,7 +138,7 @@ p {
   }
 }
 
-/* Celular */
+
 @media (max-width: 480px) {
   #container {
     justify-content: center;

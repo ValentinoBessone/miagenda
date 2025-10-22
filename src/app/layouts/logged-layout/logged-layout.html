@@ -2,15 +2,15 @@
   <div class="container header-inner">
     <a class="brand" [routerLink]="['/']" aria-label="Ir a inicio">
 
-      <span class="brand-name">MiAgenda</span>
+      <span class="logo">Mi Agenda</span>
     </a>
 
     <nav class="main-nav" aria-label="Navegación principal" role="navigation">
       <a class="nav-link" [routerLink]="['/']" routerLinkActive="active">Contactos</a>
       <a class="nav-link" [routerLink]="['/groups']" routerLinkActive="active">Grupos</a>
-      <button class="btn btn-logout" (click)="openLogoutModal()" aria-label="Cerrar sesión">Cerrar sesión</button>
     </nav>
   </div>
+  <button class="logout" (click)="openLogoutModal()" aria-label="Cerrar sesión">Cerrar sesión</button>
 </header>
 
 <main class="app-main">
