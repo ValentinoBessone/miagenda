@@ -64,7 +64,7 @@ export class NewEditContact implements OnInit {
       this.errorEnBack = true;
       return
     };
-    this.router.navigate(["", res.id]);
+    this.router.navigate(['/contacts', res.id]);
   }
 
   async toggleFavorite() {

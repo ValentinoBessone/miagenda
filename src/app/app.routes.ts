@@ -28,14 +28,17 @@ export const routes: Routes = [
       {
         path: "",
         component: ContactsPage
-      },{
+      },
+      {
         path: "contacts/new",
         component: NewEditContact
       },
+
       {
-        path: "contacts/:id",
+        path: "contacts/:idContacto",
         component: ContactDetailsPage
       },
+      
       {
         path: "contacts/:idContacto/edit",
         component: NewEditContact
